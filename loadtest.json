@@ -1,0 +1,40 @@
+{
+  "config": {
+    "target": "http://localhost:8001",
+    "http": {
+      "timeout": 30
+    },
+    "phase": [
+      {
+        "duration": 30,
+        "arrivalRate": 20
+      }
+    ]
+  },
+  "scnearios": [
+    {
+      "flow": [
+        {
+          "get": {
+            "url": "/"
+          }
+        },
+        {
+          "post": {
+            "url": "/auth/login",
+            "json": {
+              "email": "zeroch0@gmail.com",
+              "password": "nodejsbook"
+            },
+            "followerRedirect": false
+          }
+        },
+        {
+          "get": {
+            "url": "/hashtag?hashtag=nodebird"
+          }
+        }
+      ]
+    }
+  ]
+}
